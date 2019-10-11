@@ -49,7 +49,7 @@ def main(client):
   more_pages = True
   while more_pages:
     page = campaign_service.get(selector)
-
+    print('pages is: ', page)
     # Display results.
     if 'entries' in page:
       for campaign in page['entries']:
@@ -64,5 +64,5 @@ def main(client):
 
 
 if __name__ == '__main__':
-  adwords_client = adwords.AdWordsClient.LoadFromStorage()
+  adwords_client = adwords.AdWordsClient.LoadFromStorage(path='/Users/alex/googleads-python-lib/googleads.yaml')
   main(adwords_client)
